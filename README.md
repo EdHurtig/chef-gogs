@@ -4,6 +4,8 @@
 
 Installs gogs (Go Git Service).  Which is essantailly a free self hosted Github.
 
+Gogs will listen on port 3000.  Configuration file management through this cookbook is on the way
+
 # Requirements
 
 * `apt` cookbook
