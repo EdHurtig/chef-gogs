@@ -1,6 +1,4 @@
-# gogs
-
-[![Build Status](https://travis-ci.org/EdHurtig/chef-gogs.svg)](https://travis-ci.org/EdHurtig/chef-gogs)
+# gogs [![Build Status](https://travis-ci.org/EdHurtig/chef-gogs.svg)](https://travis-ci.org/EdHurtig/chef-gogs)
 
 Installs gogs (Go Git Service).  Which is essantailly a free self hosted Github.
 
