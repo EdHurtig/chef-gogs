@@ -80,7 +80,7 @@ default['gogs']['config']['oauth.github']['TOKEN_URL'] = 'https://github.com/log
 default['gogs']['config']['oauth.google']['ENABLED'] = false
 default['gogs']['config']['oauth.google']['CLIENT_ID'] = ''
 default['gogs']['config']['oauth.google']['CLIENT_SECRET'] = ''
-default['gogs']['config']['oauth.google']['SCOPES'] = 
+default['gogs']['config']['oauth.google']['SCOPES'] =
 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile'
 default['gogs']['config']['oauth.google']['AUTH_URL'] = 'https://accounts.google.com/o/oauth2/auth'
 default['gogs']['config']['oauth.google']['TOKEN_URL'] = 'https://accounts.google.com/o/oauth2/token'
@@ -162,9 +162,9 @@ default['gogs']['config']['git.fsck']['ENABLE'] = true
 default['gogs']['config']['git.fsck']['INTERVAL'] = 24
 default['gogs']['config']['git.fsck']['ARGS'] = ''
 
-default['gogs']['config']['i18n']['LANGS'] = 
+default['gogs']['config']['i18n']['LANGS'] =
 'en-US,zh-CN,zh-HK,de-DE,fr-FR,nl-NL,lv-LV,ru-RU,ja-JP,es-ES,pt-BR,pl-PL'
-default['gogs']['config']['i18n']['NAMES'] = 
+default['gogs']['config']['i18n']['NAMES'] =
 'English,简体中文,繁體中文,Deutsch,Français,Nederlands,Latviešu,Русский,日本语,Español,Português,Polski'
 
 default['gogs']['config']['other']['SHOW_FOOTER_BRANDING'] = false
