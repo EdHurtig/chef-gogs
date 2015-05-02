@@ -28,12 +28,11 @@ os = 'windows' if windows?
 
 fail 'Platform Distribution of gogs could not be determined' if os.empty?
 
-directory node['gogs']['install_dir']
-
 package 'unzip'
 package 'git'
 
 [
+  node['gogs']['install_dir'],
   "#{node['gogs']['install_dir']}/gogs/custom/conf",
   node['gogs']['config']['repository']['ROOT']
 ].each do |dir|
@@ -56,13 +55,14 @@ end
 ark 'gogs' do
   path node['gogs']['install_dir']
   url "https://github.com/gogits/gogs/releases/download/v#{node['gogs']['version']}/#{os}_amd64.zip"
+  owner node['gogs']['config']['global']['RUN_USER']
+  group node['gogs']['config']['global']['RUN_USER']
   action :put
 end
 
 template "#{node['gogs']['install_dir']}/gogs/custom/conf/app.ini" do
   source 'app.ini.erb'
-  owner 'root'
-  group 'root'
+  owner node['gogs']['config']['global']['RUN_USER']
   mode '0644'
   variables config: JSON.parse(node['gogs']['config'].to_json)
 end
