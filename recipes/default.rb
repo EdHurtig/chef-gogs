@@ -39,6 +39,22 @@ ark 'gogs' do
   action :put
 end
 
+directory "#{node['gogs']['install_dir']}/gogs/custom/conf/" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+  recursive true
+end
+
+template "#{node['gogs']['install_dir']}/gogs/custom/conf/app.ini" do
+  source 'app.ini.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  variables config: JSON.parse(node['gogs']['config'].to_json)
+end
+
 supervisord_program 'gogs' do
   command "#{node['gogs']['install_dir']}/gogs/gogs web"
   action [:supervise, :start]
