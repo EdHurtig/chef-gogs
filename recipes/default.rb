@@ -33,6 +33,14 @@ directory node['gogs']['install_dir']
 package 'unzip'
 package 'git'
 
+user node['gogs']['config']['global']['RUN_USER'] do
+  action :create
+  comment 'Gogs User'
+  home "/home/#{node['gogs']['config']['global']['RUN_USER']}"
+  supports manage_home: true
+  not_if node['gogs']['config']['global']['RUN_USER'].empty?
+end
+
 ark 'gogs' do
   path node['gogs']['install_dir']
   url "https://github.com/gogits/gogs/releases/download/v#{node['gogs']['version']}/#{os}_amd64.zip"
