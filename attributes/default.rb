@@ -24,6 +24,8 @@ default['gogs']['config']['server']['LANDING_PAGE'] = 'home'
 
 default['gogs']['config']['database']['DB_TYPE'] = 'sqlite3'
 default['gogs']['config']['database']['PATH'] = 'data/gogs.db'
+
+# default['gogs']['config']['database']['DB_TYPE'] = 'mysql'
 default['gogs']['config']['database']['HOST'] = '127.0.0.1:3306'
 default['gogs']['config']['database']['NAME'] = 'gogs'
 default['gogs']['config']['database']['USER'] = 'root'
