@@ -22,11 +22,9 @@ include_recipe 'chef-sugar'
 
 include_recipe 'supervisord'
 
-os = 'linux' if linux?
+os = 'linux'
 os = 'darwin' if osx?
 os = 'windows' if windows?
-
-fail 'Platform Distribution of gogs could not be determined' if os.empty?
 
 package 'unzip'
 package 'git'
