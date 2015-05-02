@@ -33,10 +33,10 @@ The Release version to install.  See https://github.com/gogits/gogs/releases
 The `node['gogs']['config']` tree gets parsed into the gogs [app.ini](https://github.com/gogits/gogs/blob/master/conf/app.ini).  
 Note that the attributes are split into sections then into their individual settings.
 
-An excerpt of [attributes/default.rb](https://github.com/EdHurtig/chef-gogs/blob/master/attributes/default.rb)
-to give you an idea of how these options work.
-
 For Documentation on what each setting does please refer to the [app.ini](https://github.com/gogits/gogs/blob/master/conf/app.ini)
+
+An excerpt of [attributes/default.rb](https://github.com/EdHurtig/chef-gogs/blob/master/attributes/default.rb)
+to give you an idea of how these options work: 
 
 ```ruby
 default['gogs']['config']['global']['APP_NAME'] = 'Gogs: Go Git Service'
