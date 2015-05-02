@@ -1,4 +1,4 @@
-# ![Go Git Service](http://i.imgur.com/AmiAmni.jpg?1) gogs [![Build Status](https://travis-ci.org/EdHurtig/chef-gogs.svg)](https://travis-ci.org/EdHurtig/chef-gogs)
+# gogs [![Build Status](https://travis-ci.org/EdHurtig/chef-gogs.svg)](https://travis-ci.org/EdHurtig/chef-gogs)
 
 Installs gogs (Go Git Service), An open source Git Service. 
 
