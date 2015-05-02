@@ -3,7 +3,7 @@ default['gogs']['version'] = '0.6.1'
 
 default['gogs']['config']['global']['APP_NAME'] = 'Gogs: Go Git Service'
 default['gogs']['config']['global']['RUN_USER'] = 'git'
-default['gogs']['config']['global']['RUN_MODE'] = 'dev'
+default['gogs']['config']['global']['RUN_MODE'] = 'prod'
 
 default['gogs']['config']['repository']['ROOT'] = '/ops/gogs/repos'
 default['gogs']['config']['repository']['SCRIPT_TYPE'] = 'bash'
@@ -22,7 +22,8 @@ default['gogs']['config']['server']['KEY_FILE'] = 'custom/https/key.pem'
 default['gogs']['config']['server']['ENABLE_GZIP'] = false
 default['gogs']['config']['server']['LANDING_PAGE'] = 'home'
 
-default['gogs']['config']['database']['DB_TYPE'] = 'mysql'
+default['gogs']['config']['database']['DB_TYPE'] = 'sqlite3'
+default['gogs']['config']['database']['PATH'] = 'data/gogs.db'
 default['gogs']['config']['database']['HOST'] = '127.0.0.1:3306'
 default['gogs']['config']['database']['NAME'] = 'gogs'
 default['gogs']['config']['database']['USER'] = 'root'
@@ -31,7 +32,7 @@ default['gogs']['config']['database']['SSL_MODE'] = 'disable'
 
 default['gogs']['config']['admin'] = {}
 
-default['gogs']['config']['security']['INSTALL_LOCK'] = false
+default['gogs']['config']['security']['INSTALL_LOCK'] = true
 default['gogs']['config']['security']['SECRET_KEY'] = SecureRandom.urlsafe_base64(nil, true)
 default['gogs']['config']['security']['LOGIN_REMEMBER_DAYS'] = 7
 default['gogs']['config']['security']['COOKIE_USERNAME'] = 'gogs_awesome'
@@ -65,11 +66,11 @@ default['gogs']['config']['mailer']['FROM'] = ''
 default['gogs']['config']['mailer']['USER'] = ''
 default['gogs']['config']['mailer']['PASSWD'] = ''
 
-default['gogs']['config']['oauth']['ENABLED'] = false
+default['gogs']['config']['oauth']['ENABLED'] = true
 
-default['gogs']['config']['oauth.github']['ENABLED'] = false
 default['gogs']['config']['oauth.github']['CLIENT_ID'] = ''
 default['gogs']['config']['oauth.github']['CLIENT_SECRET'] = ''
+default['gogs']['config']['oauth.github']['ENABLED'] = true
 default['gogs']['config']['oauth.github']['SCOPES'] = 'https://api.github.com/user'
 default['gogs']['config']['oauth.github']['AUTH_URL'] = 'https://github.com/login/oauth/authorize'
 default['gogs']['config']['oauth.github']['TOKEN_URL'] = 'https://github.com/login/oauth/access_token'
@@ -121,9 +122,9 @@ default['gogs']['config']['attachment']['MAX_FILES'] = 10
 default['gogs']['config']['time']['FORMAT'] = ''
 
 default['gogs']['config']['log']['ROOT_PATH'] = ''
-default['gogs']['config']['log']['MODE'] = 'console'
+default['gogs']['config']['log']['MODE'] = 'file'
 default['gogs']['config']['log']['BUFFER_LEN'] = 10000
-default['gogs']['config']['log']['LEVEL'] = 'Trace'
+default['gogs']['config']['log']['LEVEL'] = 'Info'
 
 default['gogs']['config']['log.console']['LEVEL'] = ''
 
