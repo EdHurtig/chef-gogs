@@ -69,5 +69,10 @@ end
 
 supervisord_program 'gogs' do
   command "#{node['gogs']['install_dir']}/gogs/gogs web"
+  autorestart true
+  startretries 10
+  user node['gogs']['config']['global']['RUN_USER']
+  stderr_logfile "#{node['gogs']['install_dir']}/gogs/supervisord_gogs.err.log"
+  stdout_logfile "#{node['gogs']['install_dir']}/gogs/supervisord_gogs.out.log"
   action [:supervise, :start]
 end
