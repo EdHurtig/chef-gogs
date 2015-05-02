@@ -31,6 +31,14 @@ fail 'Platform Distribution of gogs could not be determined' if os.empty?
 package 'unzip'
 package 'git'
 
+user node['gogs']['config']['global']['RUN_USER'] do
+  action :create
+  comment 'Gogs User'
+  home "/home/#{node['gogs']['config']['global']['RUN_USER']}"
+  shell '/bin/bash'
+  supports manage_home: true
+end
+
 [
   node['gogs']['install_dir'],
   "#{node['gogs']['install_dir']}/gogs/custom/conf",
@@ -43,13 +51,6 @@ package 'git'
     action :create
     recursive true
   end
-end
-
-user node['gogs']['config']['global']['RUN_USER'] do
-  action :create
-  comment 'Gogs User'
-  home "/home/#{node['gogs']['config']['global']['RUN_USER']}"
-  supports manage_home: true
 end
 
 ark 'gogs' do
