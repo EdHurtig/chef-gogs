@@ -107,8 +107,8 @@ default['gogs']['config']['session']['PROVIDER_CONFIG'] = 'data/sessions'
 default['gogs']['config']['session']['COOKIE_NAME'] = 'i_like_gogits'
 default['gogs']['config']['session']['COOKIE_SECURE'] = false
 default['gogs']['config']['session']['ENABLE_SET_COOKIE'] = true
-default['gogs']['config']['session']['GC_INTERVAL_TIME'] = 86400
-default['gogs']['config']['session']['SESSION_LIFE_TIME'] = 86400
+default['gogs']['config']['session']['GC_INTERVAL_TIME'] = 86_400
+default['gogs']['config']['session']['SESSION_LIFE_TIME'] = 86_400
 
 default['gogs']['config']['picture']['SERVICE'] = 'server'
 default['gogs']['config']['picture']['AVATAR_UPLOAD_PATH'] = 'data/avatars'
@@ -125,14 +125,14 @@ default['gogs']['config']['time']['FORMAT'] = ''
 
 default['gogs']['config']['log']['ROOT_PATH'] = ''
 default['gogs']['config']['log']['MODE'] = 'file'
-default['gogs']['config']['log']['BUFFER_LEN'] = 10000
+default['gogs']['config']['log']['BUFFER_LEN'] = 10_000
 default['gogs']['config']['log']['LEVEL'] = 'Info'
 
 default['gogs']['config']['log.console']['LEVEL'] = ''
 
 default['gogs']['config']['log.file']['LEVEL'] = ''
 default['gogs']['config']['log.file']['LOG_ROTATE'] = true
-default['gogs']['config']['log.file']['MAX_LINES'] = 1000000
+default['gogs']['config']['log.file']['MAX_LINES'] = 1_000_000
 default['gogs']['config']['log.file']['MAX_SIZE_SHIFT'] = 28
 default['gogs']['config']['log.file']['DAILY_ROTATE'] = true
 default['gogs']['config']['log.file']['MAX_DAYS'] = 7
@@ -154,7 +154,7 @@ default['gogs']['config']['log.database']['LEVEL'] = ''
 default['gogs']['config']['log.database']['DRIVER'] = ''
 default['gogs']['config']['log.database']['CONN'] = ''
 
-default['gogs']['config']['git']['MAX_GIT_DIFF_LINES'] = 10000
+default['gogs']['config']['git']['MAX_GIT_DIFF_LINES'] = 10_000
 default['gogs']['config']['git']['GC_ARGS'] = ''
 
 default['gogs']['config']['git.fsck']['ENABLE'] = true
