@@ -33,26 +33,30 @@ directory node['gogs']['install_dir']
 package 'unzip'
 package 'git'
 
+[
+  "#{node['gogs']['install_dir']}/gogs/custom/conf",
+  node['gogs']['config']['repository']['ROOT']
+].each do |dir|
+  directory dir do
+    owner node['gogs']['config']['global']['RUN_USER']
+    group node['gogs']['config']['global']['RUN_USER']
+    mode '0755'
+    action :create
+    recursive true
+  end
+end
+
 user node['gogs']['config']['global']['RUN_USER'] do
   action :create
   comment 'Gogs User'
   home "/home/#{node['gogs']['config']['global']['RUN_USER']}"
   supports manage_home: true
-  not_if node['gogs']['config']['global']['RUN_USER'].empty?
 end
 
 ark 'gogs' do
   path node['gogs']['install_dir']
   url "https://github.com/gogits/gogs/releases/download/v#{node['gogs']['version']}/#{os}_amd64.zip"
   action :put
-end
-
-directory "#{node['gogs']['install_dir']}/gogs/custom/conf/" do
-  owner 'root'
-  group 'root'
-  mode '0755'
-  action :create
-  recursive true
 end
 
 template "#{node['gogs']['install_dir']}/gogs/custom/conf/app.ini" do
