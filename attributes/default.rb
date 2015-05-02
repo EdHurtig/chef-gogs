@@ -5,7 +5,7 @@ default['gogs']['config']['global']['APP_NAME'] = 'Gogs: Go Git Service'
 default['gogs']['config']['global']['RUN_USER'] = 'git'
 default['gogs']['config']['global']['RUN_MODE'] = 'dev'
 
-default['gogs']['config']['repository']['ROOT'] =
+default['gogs']['config']['repository']['ROOT'] = '/ops/gogs/repos'
 default['gogs']['config']['repository']['SCRIPT_TYPE'] = 'bash'
 
 default['gogs']['config']['server']['PROTOCOL'] = 'http'
@@ -26,7 +26,7 @@ default['gogs']['config']['database']['DB_TYPE'] = 'mysql'
 default['gogs']['config']['database']['HOST'] = '127.0.0.1:3306'
 default['gogs']['config']['database']['NAME'] = 'gogs'
 default['gogs']['config']['database']['USER'] = 'root'
-default['gogs']['config']['database']['PASSWD'] =
+default['gogs']['config']['database']['PASSWD'] = ''
 default['gogs']['config']['database']['SSL_MODE'] = 'disable'
 
 default['gogs']['config']['admin'] = {}
@@ -56,41 +56,41 @@ default['gogs']['config']['webhook']['SKIP_TLS_VERIFY'] = false
 default['gogs']['config']['mailer']['ENABLED'] = false
 default['gogs']['config']['mailer']['SEND_BUFFER_LEN'] = 10
 default['gogs']['config']['mailer']['SUBJECT'] = '%(APP_NAME)s'
-default['gogs']['config']['mailer']['HOST'] =
-default['gogs']['config']['mailer']['SKIP_VERIFY'] =
+default['gogs']['config']['mailer']['HOST'] = ''
+default['gogs']['config']['mailer']['SKIP_VERIFY'] = ''
 default['gogs']['config']['mailer']['USE_CERTIFICATE'] = false
 default['gogs']['config']['mailer']['CERT_FILE'] = 'custom/mailer/cert.pem'
 default['gogs']['config']['mailer']['KEY_FILE'] = 'custom/mailer/key.pem'
-default['gogs']['config']['mailer']['FROM'] =
-default['gogs']['config']['mailer']['USER'] =
-default['gogs']['config']['mailer']['PASSWD'] =
+default['gogs']['config']['mailer']['FROM'] = ''
+default['gogs']['config']['mailer']['USER'] = ''
+default['gogs']['config']['mailer']['PASSWD'] = ''
 
 default['gogs']['config']['oauth']['ENABLED'] = false
 
 default['gogs']['config']['oauth.github']['ENABLED'] = false
-default['gogs']['config']['oauth.github']['CLIENT_ID'] =
-default['gogs']['config']['oauth.github']['CLIENT_SECRET'] =
+default['gogs']['config']['oauth.github']['CLIENT_ID'] = ''
+default['gogs']['config']['oauth.github']['CLIENT_SECRET'] = ''
 default['gogs']['config']['oauth.github']['SCOPES'] = 'https://api.github.com/user'
 default['gogs']['config']['oauth.github']['AUTH_URL'] = 'https://github.com/login/oauth/authorize'
 default['gogs']['config']['oauth.github']['TOKEN_URL'] = 'https://github.com/login/oauth/access_token'
 
 default['gogs']['config']['oauth.google']['ENABLED'] = false
-default['gogs']['config']['oauth.google']['CLIENT_ID'] =
-default['gogs']['config']['oauth.google']['CLIENT_SECRET'] =
+default['gogs']['config']['oauth.google']['CLIENT_ID'] = ''
+default['gogs']['config']['oauth.google']['CLIENT_SECRET'] = ''
 default['gogs']['config']['oauth.google']['SCOPES'] = 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile'
 default['gogs']['config']['oauth.google']['AUTH_URL'] = 'https://accounts.google.com/o/oauth2/auth'
 default['gogs']['config']['oauth.google']['TOKEN_URL'] = 'https://accounts.google.com/o/oauth2/token'
 
 default['gogs']['config']['oauth.qq']['ENABLED'] = false
-default['gogs']['config']['oauth.qq']['CLIENT_ID'] =
-default['gogs']['config']['oauth.qq']['CLIENT_SECRET'] =
+default['gogs']['config']['oauth.qq']['CLIENT_ID'] = ''
+default['gogs']['config']['oauth.qq']['CLIENT_SECRET'] = ''
 default['gogs']['config']['oauth.qq']['SCOPES'] = 'get_user_info'
 default['gogs']['config']['oauth.qq']['AUTH_URL'] = 'https://graph.qq.com/oauth2.0/authorize'
 default['gogs']['config']['oauth.qq']['TOKEN_URL'] = 'https://graph.qq.com/oauth2.0/token'
 
 default['gogs']['config']['oauth.weibo']['ENABLED'] = false
-default['gogs']['config']['oauth.weibo']['CLIENT_ID'] =
-default['gogs']['config']['oauth.weibo']['CLIENT_SECRET'] =
+default['gogs']['config']['oauth.weibo']['CLIENT_ID'] = ''
+default['gogs']['config']['oauth.weibo']['CLIENT_SECRET'] = ''
 default['gogs']['config']['oauth.weibo']['SCOPES'] = 'all'
 default['gogs']['config']['oauth.weibo']['AUTH_URL'] = 'https://api.weibo.com/oauth2/authorize'
 default['gogs']['config']['oauth.weibo']['TOKEN_URL'] = 'https://api.weibo.com/oauth2/access_token'
@@ -118,45 +118,45 @@ default['gogs']['config']['attachment']['ALLOWED_TYPES'] = 'image/jpeg|image/png
 default['gogs']['config']['attachment']['MAX_SIZE'] = 32
 default['gogs']['config']['attachment']['MAX_FILES'] = 10
 
-default['gogs']['config']['time']['FORMAT'] =
+default['gogs']['config']['time']['FORMAT'] = ''
 
-default['gogs']['config']['log']['ROOT_PATH'] =
+default['gogs']['config']['log']['ROOT_PATH'] = ''
 default['gogs']['config']['log']['MODE'] = 'console'
 default['gogs']['config']['log']['BUFFER_LEN'] = 10000
 default['gogs']['config']['log']['LEVEL'] = 'Trace'
 
-default['gogs']['config']['log.console']['LEVEL'] =
+default['gogs']['config']['log.console']['LEVEL'] = ''
 
-default['gogs']['config']['log.file']['LEVEL'] =
+default['gogs']['config']['log.file']['LEVEL'] = ''
 default['gogs']['config']['log.file']['LOG_ROTATE'] = true
 default['gogs']['config']['log.file']['MAX_LINES'] = 1000000
 default['gogs']['config']['log.file']['MAX_SIZE_SHIFT'] = 28
 default['gogs']['config']['log.file']['DAILY_ROTATE'] = true
 default['gogs']['config']['log.file']['MAX_DAYS'] = 7
 
-default['gogs']['config']['log.conn']['LEVEL'] =
+default['gogs']['config']['log.conn']['LEVEL'] = ''
 default['gogs']['config']['log.conn']['RECONNECT_ON_MSG'] = false
 default['gogs']['config']['log.conn']['RECONNECT'] = false
 default['gogs']['config']['log.conn']['PROTOCOL'] = 'tcp'
-default['gogs']['config']['log.conn']['ADDR'] =
+default['gogs']['config']['log.conn']['ADDR'] = ''
 
-default['gogs']['config']['og.smtp']['LEVEL'] =
+default['gogs']['config']['og.smtp']['LEVEL'] = ''
 default['gogs']['config']['og.smtp']['SUBJECT'] = 'Diagnostic message from serve'
-default['gogs']['config']['og.smtp']['HOST'] =
-default['gogs']['config']['og.smtp']['USER'] =
-default['gogs']['config']['og.smtp']['PASSWD'] =
-default['gogs']['config']['og.smtp']['RECEIVERS'] =
+default['gogs']['config']['og.smtp']['HOST'] = ''
+default['gogs']['config']['og.smtp']['USER'] = ''
+default['gogs']['config']['og.smtp']['PASSWD'] = ''
+default['gogs']['config']['og.smtp']['RECEIVERS'] = ''
 
-default['gogs']['config']['log.database']['LEVEL'] =
-default['gogs']['config']['log.database']['DRIVER'] =
-default['gogs']['config']['log.database']['CONN'] =
+default['gogs']['config']['log.database']['LEVEL'] = ''
+default['gogs']['config']['log.database']['DRIVER'] = ''
+default['gogs']['config']['log.database']['CONN'] = ''
 
 default['gogs']['config']['git']['MAX_GIT_DIFF_LINES'] = 10000
-default['gogs']['config']['git']['GC_ARGS'] =
+default['gogs']['config']['git']['GC_ARGS'] = ''
 
 default['gogs']['config']['git.fsck']['ENABLE'] = true
 default['gogs']['config']['git.fsck']['INTERVAL'] = 24
-default['gogs']['config']['git.fsck']['ARGS'] =
+default['gogs']['config']['git.fsck']['ARGS'] = ''
 
 default['gogs']['config']['i18n']['LANGS'] = 'en-US,zh-CN,zh-HK,de-DE,fr-FR,nl-NL,lv-LV,ru-RU,ja-JP,es-ES,pt-BR,pl-PL'
 default['gogs']['config']['i18n']['NAMES'] = 'English,简体中文,繁體中文,Deutsch,Français,Nederlands,Latviešu,Русский,日本语,Español,Português,Polski'
