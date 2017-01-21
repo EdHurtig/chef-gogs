@@ -67,7 +67,7 @@ template "#{node['gogs']['install_dir']}/gogs/custom/conf/app.ini" do
 end
 
 supervisord_program 'gogs' do
-  directory "#{node['gogs']['install_dir']}"
+  directory "#{node['gogs']['install_dir']}/gogs"
   command "#{node['gogs']['install_dir']}/gogs/gogs web"
   autorestart true
   startretries 10
