@@ -1,5 +1,5 @@
 default['gogs']['install_dir'] = '/opt'
-default['gogs']['version'] = '0.6.1'
+default['gogs']['version'] = '0.9.113'
 
 default['gogs']['config']['global']['APP_NAME'] = 'Gogs: Go Git Service'
 default['gogs']['config']['global']['RUN_USER'] = 'git'
