@@ -73,8 +73,8 @@ supervisord_program 'gogs' do
   startretries 10
   user node['gogs']['config']['global']['RUN_USER']
   environment [
-    "HOME=/home/#{node['gogs']['global']['RUN_USER']}",
-    "USER=#{node['gogs']['global']['RUN_USER']}"
+    "HOME=/home/#{node['gogs']['config']['global']['RUN_USER']}",
+    "USER=#{node['gogs']['config']['global']['RUN_USER']}"
   ]
   stderr_logfile "#{node['gogs']['install_dir']}/gogs/supervisord_gogs.err.log"
   stdout_logfile "#{node['gogs']['install_dir']}/gogs/supervisord_gogs.out.log"
