@@ -67,10 +67,15 @@ template "#{node['gogs']['install_dir']}/gogs/custom/conf/app.ini" do
 end
 
 supervisord_program 'gogs' do
+  directory "#{node['gogs']['install_dir']}/gogs"
   command "#{node['gogs']['install_dir']}/gogs/gogs web"
   autorestart true
   startretries 10
   user node['gogs']['config']['global']['RUN_USER']
+  environment [
+    "HOME=/home/#{node['gogs']['config']['global']['RUN_USER']}",
+    "USER=#{node['gogs']['config']['global']['RUN_USER']}"
+  ]
   stderr_logfile "#{node['gogs']['install_dir']}/gogs/supervisord_gogs.err.log"
   stdout_logfile "#{node['gogs']['install_dir']}/gogs/supervisord_gogs.out.log"
   action [:supervise, :start]
