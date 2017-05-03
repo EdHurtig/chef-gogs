@@ -4,16 +4,17 @@ driver:
 
 provisioner:
   name: chef_zero
+  require_chef_omnibus: true
+
+verifier:
+  name: inspec
 
 platforms:
-  - name: ubuntu-12.04
+  - name: ubuntu-16.04
     driver_config:
       network:
       - ["forwarded_port", {guest: 8080, host: 8080}]
-  - name: ubuntu-14.04
-    driver_config:
-      network:
-      - ["forwarded_port", {guest: 8080, host: 8080}]
+
 suites:
   - name: default
     run_list:
