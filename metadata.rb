@@ -1,7 +1,7 @@
 name             'gogs'
 maintainer       'Eddie Hurtig'
 maintainer_email 'eddie@hurtigtechnologies.com'
-license          'apache2'
+license          'Apache-2.0'
 description      'Installs and Configures a Go Git Service Server'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 source_url       'https://github.com/EdHurtig/chef-gogs'
