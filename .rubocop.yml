@@ -16,9 +16,15 @@ MethodLength:
 CyclomaticComplexity:
   Max: 10
 
-SingleSpaceBeforeFirstArg:
+Style/IndentAssignment:
+  Enabled: false
+
+Style/SpaceBeforeFirstArg:
   Exclude:
     - metadata.rb
+
+Style/TrailingCommaInLiteral:
+  Enabled: false
 
 AllCops:
   Exclude:

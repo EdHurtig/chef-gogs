@@ -4,6 +4,9 @@ maintainer_email 'eddie@hurtigtechnologies.com'
 license          'apache2'
 description      'Installs and Configures a Go Git Service Server'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+source_url       'https://github.com/EdHurtig/chef-gogs'
+issues_url       'https://github.com/EdHurtig/chef-gogs/issues'
+chef_version     '>= 12.0'
 version          '0.1.1'
 
 supports 'ubuntu', '>= 12.04'
